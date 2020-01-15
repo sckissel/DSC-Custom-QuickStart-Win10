@@ -702,13 +702,11 @@ Configuration Win10Devices # Name of the configuration
             DependsOn = '[cAzureStorage]DEMOUtilsSync'
          }
 
-         #Commented out for now as Hyper-V won't work on VMs
-         <#
+         # Comment out if applyigng to Windows 10 VMs as Hyper-V won't work on VMs without Server 2019 and additional settings.         
          xWindowsOptionalFeature 'Enable Hyper-V' # Enables Hyper-V for WDAG
          {
             Name    = 'Microsoft-Hyper-V'
             Ensure  = 'Present'
          }
-         #>
-  }
+    }
 }
