@@ -649,9 +649,9 @@ Configuration Win10Devices # Name of the configuration
          cAzureStorage DEMOUtilsSync # Sync files with an Azure Storage account into the C:\Utils directory
          {  
             Path = 'C:\DEMO\Utils'
-            StorageAccountName = 'sademofileshare'
-            StorageAccountKey = 'Jkg3i64cCeSozK4b6urtktrVTEPf6//JxtTu0KW38Jx9LJTuiS+DO14aqq5fFflrViwKOddEs4FcV+8dBefJ0A=='
-            StorageAccountContainer = 'utils'
+            StorageAccountName = '<AzureStorageAccountName>' # Enter the name of the Azure Storage Account here in lower case
+            StorageAccountKey = '<StorageAccountKey>' # Enter the Azure Storage account key here
+            StorageAccountContainer = '<AzureStorageAccountContainer>' # Enter the Azure Storage Account containter name here
             Blob = $null
             DependsOn = '[File]DEMOUtils'
          }
@@ -702,7 +702,7 @@ Configuration Win10Devices # Name of the configuration
             DependsOn = '[cAzureStorage]DEMOUtilsSync'
          }
 
-         #Commented out for now as it won't work on VMs
+         #Commented out for now as Hyper-V won't work on VMs
          <#
          xWindowsOptionalFeature 'Enable Hyper-V' # Enables Hyper-V for WDAG
          {
