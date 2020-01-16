@@ -1,4 +1,4 @@
-# DSC-Custom-QuickStart-Win10-Win10
+# DSC-Custom-QuickStart-Win10
 
 ## /PowerShell DSC/
 
