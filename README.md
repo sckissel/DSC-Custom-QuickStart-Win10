@@ -26,19 +26,19 @@ _Modify/Update and/or remove the Configurations as necessary to suit individual 
 
 ### [PowerShell_Logging.reg](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/PowerShell%20DSC/PowerShell_Logging.reg)  
 
-Registry script to enable PowerShell Script Block logging as well as PowerShell Module logging for all modules.  Modify the first * in the file under ModuleNames if only specific module(s) are required to be logged.  
+Registry script to enable PowerShell Script Block logging as well as PowerShell Module logging for all modules.  Modify the first * in the file under ModuleNames if only specific module(s) are required to be logged. The .reg file should be locally available to the node.  
 
 ## /Scheduled Tasks/
 
 ### [InstallSoftware.ps1](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/InstallSoftware.ps1)
 
-PowerShell script designed to install MSIs for users via Scheduled Task.  Modify as needed.  
+PowerShell script designed to install MSIs for users via Scheduled Task.  Modify as needed. MSIs to be installed should be locally available to the node.  
 
 ## /Scheduled Tasks/LGPO/
 
 ### [ApplyLockedLGPO.ps1](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/ApplyLockedLGPO.ps1)
 
-PowerShell script to apply Local Group Policy settings for users during Scheduled Task at logon and on a recurring basis to configure HKEY Current User registry keys. PowerShell DSC by itself was not designed to handle Current User registry keys. This may be an acceptable workaround.  
+PowerShell script to apply Local Group Policy settings for users during Scheduled Task at logon and on a recurring basis to configure HKEY Current User registry keys. PowerShell DSC by itself was not designed to handle Current User registry keys. This may be an acceptable workaround. PowerShell script should be locally available to the node.  
 
 ### [LGPO.exe](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/LGPO.exe)
 
@@ -46,4 +46,4 @@ Executable file to apply UserLockedLGPO.txt file. This executable was extracted 
 
 ### [UserLockedLGPO.txt](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/UserLockedLGPO.txt)
 
-Text file containing HKEY Current User settings to be applied by LGPO.exe, which is called by the ApplyLockedLGPO.ps1  
+Text file containing HKEY Current User settings to be applied by LGPO.exe, which is called by the ApplyLockedLGPO.ps1. Text file should be locally available to the node.  
