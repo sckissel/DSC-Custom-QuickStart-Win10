@@ -21,7 +21,7 @@ Sample DSC Configuration file to be uploaded to Azure Automation. This file cont
     * Robocopy-like synchronization with an Azure Storage account
     * Windows Optional Features
     * Scheduled Tasks
-    * One of the scheduled tasks is designed to apply local group policy settings on a recurring basis to configure HKCU registry keys. PowerShell DSC by itself was not designed to handle Current User registry keys. This may be an acceptable workaround.  Please see [ApplyLockedLGPO.ps1](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/ApplyLockedLGPO.ps1) file for additional information.  
+      * One of the scheduled tasks is designed to apply local group policy settings on a recurring basis to configure HKCU registry keys. PowerShell DSC by itself was not designed to handle Current User registry keys. This may be an acceptable workaround.  Please see ApplyLockedLGPO.ps1 file for additional information.  
 
 _Modify/Update and/or remove the Configurations as necessary to suit individual business purposes.  Preference is to use Intune to configure most policies applied to Windows 10 machines. Where Intune does not have the built-in capability to perform certain policies, DSC is used as a GPO-like policy engine without invoking GPOs from domain controllers. A perfect (and intended) use case for this is Zero Trust Intune-managed machines that have no line-of-sight to a domain controller._
 
@@ -47,4 +47,4 @@ Executable file to apply UserLockedLGPO.txt file. This executable was extracted 
 
 ### [UserLockedLGPO.txt](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/UserLockedLGPO.txt)
 
-Text file containing HKCU user settings to be applied by LGPO.exe, which is calledl by the ApplyLockedLGPO.ps1  
+Text file containing HKEY Current User settings to be applied by LGPO.exe, which is called by the ApplyLockedLGPO.ps1  
