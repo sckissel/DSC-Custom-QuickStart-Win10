@@ -10,7 +10,7 @@ PowerShell script to be modified for deployment within Intune PowerShell that te
 
 Sample DSC Configuration file to be uploaded to Azure Automation. This file contains a number of configurations related to:
 
-    * HKLM Registry entries
+    * HKEY Local Machine registry entries
     * Services
     * Audit policies
     * User rights assignments
@@ -20,8 +20,7 @@ Sample DSC Configuration file to be uploaded to Azure Automation. This file cont
     * PowerShell execution policy
     * Robocopy-like synchronization with an Azure Storage account
     * Windows Optional Features
-    * Scheduled Tasks
-      * One of the scheduled tasks is designed to apply local group policy settings on a recurring basis to configure HKCU registry keys. PowerShell DSC by itself was not designed to handle Current User registry keys. This may be an acceptable workaround.  Please see ApplyLockedLGPO.ps1 file for additional information.  
+    * Scheduled Tasks  
 
 _Modify/Update and/or remove the Configurations as necessary to suit individual business purposes.  Preference is to use Intune to configure most policies applied to Windows 10 machines. Where Intune does not have the built-in capability to perform certain policies, DSC is used as a GPO-like policy engine without invoking GPOs from domain controllers. A perfect (and intended) use case for this is Zero Trust Intune-managed machines that have no line-of-sight to a domain controller._
 
@@ -39,7 +38,7 @@ PowerShell script designed to install MSIs for users via Scheduled Task.  Modify
 
 ### [ApplyLockedLGPO.ps1](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/ApplyLockedLGPO.ps1)
 
-PowerShell script to apply Local Group Policy settings for users during Scheduled Task at logon.
+PowerShell script to apply Local Group Policy settings for users during Scheduled Task at logon and on a recurring basis to configure HKEY Current User registry keys. PowerShell DSC by itself was not designed to handle Current User registry keys. This may be an acceptable workaround.  
 
 ### [LGPO.exe](https://github.com/sckissel/DSC-Custom-QuickStart-Win10/blob/master/Scheduled%20Tasks/LGPO/LGPO.exe)
 
