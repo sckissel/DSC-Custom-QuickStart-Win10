@@ -22,7 +22,7 @@ Try
   
   # Check if already installed, otherwise install
   $regRead = Get-ItemProperty $path -ErrorAction SilentlyContinue
-  If (($regRead.DisplayName -eq 'EMprint Fonts') -and ($regRead.DisplayVersion -eq '1.0'))
+  If (($regRead.DisplayName -eq 'Orca') -and ($regRead.DisplayVersion -eq '1.0'))
   {
     Log 'Software already installed. Exiting Script.'
     Exit
